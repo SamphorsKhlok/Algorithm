@@ -1,0 +1,14 @@
+.docs-header-background {
+  /*background: #3f51b5;*/
+  overflow: hidden;
+}
+
+.docs-header-headline {
+  color: #3f51b5;
+}
+
+.docs-header-section{
+  text-align: center;
+  padding-top: 60px;
+  display: block;
+}

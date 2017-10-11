@@ -1,0 +1,43 @@
+<mat-sidenav-container fullscreen>
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-icon-button (click)="start.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="demo-toolbar">
+      <span>{{title}}</span>
+      <div>
+        <button mat-icon-button (click)="toggleFullscreen()" title="Toggle fullscreen">
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+        <button mat-button (click)="toggleTheme()">{{dark ? 'Light' : 'Dark'}} theme</button>
+        <button mat-button (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl')" title="Toggle between RTL and LTR">
+          {{root.dir.toUpperCase()}}
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav #start mode="side">
+    <mat-nav-list>
+      <a *ngFor="let navItem of navItems"
+         mat-list-item
+         (click)="start.close()"
+         [routerLink]="[navItem.route]">
+        <mat-icon color="primary">{{navItem.icon}}</mat-icon>
+        {{navItem.name}}
+      </a>
+      <hr>
+      <a mat-list-item
+         tabindex="-1"
+         (click)="start.close()">
+        Baseline
+      </a>
+    </mat-nav-list>
+    <button mat-button tabindex="-1" (click)="start.close()">CLOSE</button>
+  </mat-sidenav>
+  <div #root="dir" dir="ltr" class="content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
+
+

@@ -1,0 +1,9 @@
+<mat-select placeholder="Sort Algorithm" (change)="updateFilter(myselection.value)" #myselection>
+  <mat-option *ngFor="let i of filterOptions" [value]="i.value">{{i.label}}</mat-option>
+</mat-select>
+
+<mat-list>
+  <mat-list-item *ngFor="let i of intList | filter: option">
+    {{i}}
+  </mat-list-item>
+</mat-list>

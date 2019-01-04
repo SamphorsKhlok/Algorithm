@@ -48,5 +48,5 @@ export class QuickService {
     return [lesser, equal, greater]
   }
 
-  //there is another method called in place quick sort
+  //TODO: there is another method called in place quick sort
 }
